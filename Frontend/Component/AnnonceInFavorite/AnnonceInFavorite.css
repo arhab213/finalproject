@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap');
+ 
+#anonnceContainer{
+    font-family: 'Rubik', sans-serif;
+    width:400px;
+    padding:20px;
+    border-radius:5px;
+    background: #F5F7F8;
+    color: rgb(97, 97, 97);
+}
+#favParent{
+    font-family: 'Rubik', sans-serif;
+     width:80%;
+    background:#F5F7F8;
+   padding-bottom: 30px;
+   margin:30px 0 30px ;
+}
+#iconsOfAnnonce{
+    display: flex;
+    gap: 92%;
+    margin-top:20px;
+    margin-bottom:20px;
+}
+#localisation{
+    font-size: 15px;
+}
+#buttonDelete{
+    border: none;
+     cursor: pointer;
+    
+     border:0.5px solid red;
+     color:red;
+    
+    border-radius: 5px;
+     padding: 7px 30px;
+     margin: 0 30% 15px 60px;
+      width:190px;
+    
+    }

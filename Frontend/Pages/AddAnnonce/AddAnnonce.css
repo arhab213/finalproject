@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+h3{
+    font-family: 'Poppins', sans-serif;
+    color: rgb(95, 94, 94);
+}
+h2{
+    color: rgb(62, 62, 62);
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.6rem;
+    margin:7% auto -3% auto;
+    text-align: center;
+     
+}
+#Card{
+    margin-top:100px;
+}
+#ImagePrincipale{
+    margin-top:80px;
+}
+.Images{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin: 20px auto;
+   
+
+}
+.SecondaryImages{
+    margin-top:50px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+.imagesInput{
+  display:none;  
+}
+.Labelinputs{
+margin:10px auto;
+cursor: pointer;
+padding:10px 15px;
+border-radius: 5px;
+color:#784068 ;
+border: 0.5px solid #784068;
+background: #f3e9f0 ;
+ 
+}
+.Labelinputs:hover{
+    background: #ded1da ;
+cursor: pointer;
+}
+#transform:hover{
+    transform:scale(1.5);
+}
+#Trait{
+    height: 1px;
+    width: 70%;
+    margin:70px auto;
+    background: #c892b9 ;
+}
+
+#infoContainer{
+    display: flex;
+    flex-direction: column;
+  
+}
+#infoContainer>*{
+    margin: 5px 10%; 
+}
+ 
+
+#adsadded{
+    position: fixed;
+    top:13%;
+    left:40%;   
+}
+#adserror{
+    position: fixed;
+    top:13%;
+    left:39%;   
+}
+#titlecenter{
+    text-align: center;
+}
+#fields{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+#parttwo{
+    display: flex;
+    flex-direction: column;
+    
+    margin: 10px 30%;
+    
+}
+#parttwo>*{
+    margin: 10px 0;
+}
+#button{
+   margin: 50px 20%;
+}
+
+
+
+

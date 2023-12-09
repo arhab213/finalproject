@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@600&display=swap');
+#navbar{
+    background: #982176;
+    padding:20px;
+   
+    position: fixed;
+    display: flex;
+    top: 0;
+    left: 0;
+    width:100%;
+    gap:60%;
+    z-index: 3;
+
+}
+body{
+    padding: 0;
+    margin: 0;
+}
+#trait{
+   height:0.5px;
+   background: black;
+}
+#secondElm{
+    display: flex;
+   gap:50%;
+    color: white;
+    margin-left:250%;
+}
+#Navelem{
+   display: flex;
+   align-items: center;
+   
+
+}
+.navElem:hover{
+cursor: pointer;
+}
+#Logo{
+    margin-right:60%;
+    font-family: 'Rubik', sans-serif;
+    color: white;
+    font-size: 1.5rem;
+}
+
+#AccountFnc{
+    display: flex;
+    flex-direction: column;
+    gap: 10%;
+    position:absolute;
+    padding:5px;
+    height:100px;
+    width:100px;
+    background: white;
+    top:100px;
+    right:240px; 
+    z-index:4;
+    border-radius:5px;
+    border:0.5px solid gray;
+}
+
+
+#sidebarspace>*{
+    padding: 10px;
+    align-self:flex-start;
+    text-align: center;
+    margin-left: 10%;
+
+}
+
+#sidebarspace>.SideBarElement:hover{
+    background-color: rgb(224, 224, 224);
+    cursor: pointer;
+    transition: 0.1s;
+    padding: 10px;
+    border-radius:3px;
+    transform: scale(1.1);
+   
+
+}
+
+.SideBarElement{
+    color:  rgb(67, 65, 65);
+}
+
+#Regiter{
+    margin:10px 0 10px 0;
+}
+#iconLog{
+    margin-right:10px;
+    margin-top:8px;
+}
+#iconReg{
+    margin-left:-5px;
+    margin-right:5px;
+}
+#Trait{
+    height:1px;
+    background:grey;
+    margin: 0 10px;
+}
+.nav-transition-active{
+    width:25%;
+    height:100vh;
+    z-index: 2;
+    background:whitesmoke;
+    position: fixed;
+    right:0;
+    transition: 0.5s ease-out;
+    padding-top:4%;
+    display: flex;
+    gap:30px;
+    align-items: center;
+    flex-direction: column;
+    user-select: none;
+   
+}
+
+.nav-transition-no-active{
+    right:-200%;
+    transition: translateY(+20%) 0.5s ease-out;
+    
+}
+#Profile-data{
+    position: relative;
+}
+#trait{
+    height: 0.2px;
+    position: absolute;
+    background: black;
+   
+    
+}
+#innerProfile{
+    display: grid;
+    grid-gap:10px;
+    grid-template-columns: 40% 60%;
+
+}
+#innerProfile>*{
+    display: block;
+ 
+}
+#singoutbox{
+    position:fixed;
+    z-index: 2;
+    color: rgb(79, 79, 79);
+    font-weight: bold;
+    font-size: 1.2rem;
+    background: white;
+    top: 40%;
+    left:50%;
+    padding:20px;
+    transform: translateX(-50%);
+    box-shadow: 2px -1px 56px 47px rgba(0,0,0,0.09);
+    -webkit-box-shadow: 2px -1px 56px 47px rgba(0,0,0,0.09);
+    -moz-box-shadow: 2px -1px 56px 47px rgba(0,0,0,0.09);
+    border-radius: 10px;
+   
+
+}
+@media only screen and (max-width:500px) {
+    #Logo{
+        margin-right:0%;
+        font-family: 'Rubik', sans-serif;
+        color: white;
+        font-size: 1.5rem;
+    }
+    .ziada{
+        display: none;
+    }
+    #secondElm{
+        display: flex;
+       gap:50%;
+        color: white;
+        margin-left:120%;
+    }
+}
+@media only screen and (max-width:500px) {
+    #Logo{
+        margin-right:0%;
+        font-family: 'Rubik', sans-serif;
+        color: white;
+        font-size: 1.5rem;
+    }
+    .ziada{
+        display: none;
+    }
+    #secondElm{
+        display: flex;
+       gap:50%;
+        color: white;
+        margin-left:120%;
+    }
+}
+@media screen and (min-width: 501px) and (max-width: 840px) {
+   
+    #Logo{
+        margin-right:0%;
+        font-family: 'Rubik', sans-serif;
+        color: white;
+        font-size: 1.5rem;
+    }
+    .ziada{
+        display: none;
+    }
+    #secondElm{
+        display: flex;
+       gap:50%;
+        color: white;
+        margin-left:330%;
+    }
+    
+
+}
+@media screen and (min-width: 840px) and (max-width:1030px) {
+   
+ 
+    #Logo{
+        margin-right:0%;
+        font-family: 'Rubik', sans-serif;
+        color: white;
+        font-size: 1.5rem;
+    }
+   
+    #secondElm{
+        display: flex;
+       gap:50%;
+        color: white;
+        margin-left:330%;
+    }
+
+  }
+
+
+

@@ -1,0 +1,44 @@
+#HomePageContainer{
+  margin: 100px auto 0 auto;
+  display: block;
+ 
+}
+.Items{
+margin-top: 3% ;
+margin-left: 10%;
+margin-right:-10%;
+display: block;
+
+}
+#HomeTitle{
+    font-size: 1.6rem;
+    font-family: 'Poppins', sans-serif;
+    color: rgb(78, 78, 78);
+    margin: 5% auto -3% auto;
+   
+    
+}
+#traitDuhome{
+    height: 1px;
+    width: 50%;
+    margin:90px auto -60px auto;
+    background: #c892b9 ;
+}
+#alertAdded{
+    position: fixed;
+    left:35%;
+    top:10%;
+}
+@media only screen and (max-width:500px) {
+ 
+    .Items{
+     
+        margin-left: -5%;
+        margin-right:-35%;
+        display: block;
+        
+        }
+    #HomeTitle{
+        margin-top: 50px;}
+  }
+  

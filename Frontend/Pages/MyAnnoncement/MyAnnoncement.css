@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap');
+
+#title{
+    font-size: 1.6rem;
+    font-family: 'Poppins', sans-serif;
+    color: rgb(62, 62, 62);
+}
+#traitMyAnnoncement{
+  height: 1px;
+    background:#c892b9 ;
+    margin: 5% auto 0 auto;
+    width: 60%;
+}
+#thelegend{
+margin-top:10%;
+color: rgb(189, 189, 189);
+}
+#alertInMyannonce{
+  position: fixed;
+  left: 40%;
+  top: 5%;
+}

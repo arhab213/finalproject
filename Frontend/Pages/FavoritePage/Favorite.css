@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap');
+
+#FavoriteEmptyAlert{
+   margin-top: 50px;
+}
+#EmptyFavorite{
+margin-top:200px;
+opacity: 0.3;
+}
+#FavoriteTitle{
+    font-size: 1.6rem;
+    font-family: 'Poppins', sans-serif;
+     text-align: center;
+    color: rgb(62, 62, 62);
+    margin: 7% auto -8% auto;
+ 
+}
+#AnnonceContainer{
+    margin-top:150px;
+    margin-left: 10%;
+    margin-right:-10%;
+    
+}
+#traitdufavorite{
+    height: 1px;
+    background: #c892b9 ;
+    width: 60%;
+    margin: 120px auto -70px auto;
+}
+#FavoriteEmptyAlert{
+    position: fixed;
+    left: 40%;
+    top: 5%;
+}

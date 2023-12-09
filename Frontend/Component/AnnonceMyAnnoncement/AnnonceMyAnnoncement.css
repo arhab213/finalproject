@@ -1,0 +1,66 @@
+#singoutbox{
+    position:fixed;
+    z-index: 2;
+    color: rgb(79, 79, 79);
+    font-weight: bold;
+    font-size: 1.2rem;
+    background: white;
+    top: 40%;
+    left:50%;
+    padding:20px;
+    transform: translateX(-50%);
+    box-shadow: 2px -1px 56px 47px rgba(0,0,0,0.09);
+    -webkit-box-shadow: 2px -1px 56px 47px rgba(0,0,0,0.09);
+    -moz-box-shadow: 2px -1px 56px 47px rgba(0,0,0,0.09);
+    border-radius: 10px;
+   
+
+}
+#annoncemineParent{
+    font-family: 'Rubik', sans-serif;
+     width:80%;
+    background:#F5F7F8;
+   padding-bottom: 30px;
+   margin:30px 0 30px 10%;
+}
+#descmineButton{
+border: none;
+ cursor: pointer;
+
+ border:0.5px solid #7d1561;
+ color:#ab1382;
+
+border-radius: 5px;
+ padding: 7px 30px;
+ margin:0 0 15px 130%;
+  width:190px;
+ 
+}
+#descFavButton{
+border: none;
+ cursor: pointer;
+
+ border:0.5px solid #7d1561;
+ color:#ab1382;
+border-radius: 5px;
+ padding: 5px 30px;
+ margin-bottom:15px;
+  width:130px;
+
+}
+#buttonmineDelete{
+    border: none;
+     cursor: pointer;
+    
+     border:0.5px solid red;
+     color:red;
+    
+    border-radius: 5px;
+     padding: 7px 30px;
+     margin: 0 30% 15px 0;
+      width:130px;
+    
+    }
+
+
+   
