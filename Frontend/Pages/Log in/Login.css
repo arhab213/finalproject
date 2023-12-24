@@ -16,9 +16,10 @@
  }
  #LoginBtn{
     margin: 0 20%;
-    height:50px;
-
-    background: #be53a0
+    height:40px;
+    width:200px;
+    margin-left:28%;
+    background: #6900FF
  }
 #passwordAlert{
    position: fixed;

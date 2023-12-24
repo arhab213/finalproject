@@ -41,19 +41,19 @@ function Annonce(props) {
       <div id="annonceParent">
         <div id="ImageAndInfo">
           <div id="titleandimage">
-            <h1 id="titleAnnonce">{title}</h1>
             <img
               src={picture ? picture : "/image2.jpeg"}
               alt=""
-              style={{ height: "200px", width: "300px" }}
+              style={{ height: "270px", width: "270px", borderRadius: "10px" }}
             />
           </div>
           <div id="informations">
+            <h1 id="titleAnnonce">{title}</h1>
             <p id="type">
               <i class="fa-solid fa-dice"></i>&nbsp;&nbsp;&nbsp;
               <span>Type :</span> {categorie}
             </p>
-            <p id="">
+            <p id="etat">
               <i class="fa-solid fa-gears"></i>&nbsp;&nbsp;&nbsp;
               <span>état du produit :</span> {state}
             </p>
@@ -71,7 +71,6 @@ function Annonce(props) {
               {Street && city ? "not defined" : null}
             </p>
             <h4 id="Price">
-              <i class="fa-solid fa-money-bill"></i>&nbsp;&nbsp;&nbsp;
               <span>Prix : </span> {price} DA
             </h4>
           </div>

@@ -10,7 +10,7 @@
 #registerButton{
     margin: 0 30%;
     background: rgb(255,207,0);
-background: #be53a0
+background: #6900FF
 }
 #registerContainer{
     display: grid;
@@ -34,4 +34,7 @@ background: #be53a0
 }
 #uploadtitle{
     font-family: 'Poppins', sans-serif;
+}
+.textfield{
+    height: 50px;
 }

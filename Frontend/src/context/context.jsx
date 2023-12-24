@@ -19,6 +19,9 @@ function ContextProvider(props) {
   let [myannoncement, setmyannoncement] = useState([]);
   let [userchange, setuserchange] = useState(false);
   let [annoncedeleted, setannoncedeleted] = useState(false);
+  let [annoncevoiture, setannoncevoiture] = useState([]);
+  let [annonceimmobilier, setannonceimmobilier] = useState([]);
+  let [annonceother, setannonceother] = useState([]);
 
   const getapi = async () => {
     try {
@@ -34,6 +37,14 @@ function ContextProvider(props) {
     } catch (error) {
       console.log(error.message);
     }
+  };
+  const filtringAnnonce = () => {
+    const filterVoiture = annonce.filter((e) => e.categorie == "voiture");
+    setannoncevoiture(filterVoiture);
+    const filterImmobilier = annonce.filter((e) => e.categorie == "imobillier");
+    setannonceimmobilier(filterImmobilier);
+    const filterOther = annonce.filter((e) => e.categorie == "other");
+    return setannonceother(filterOther);
   };
 
   const getuserinfo = async () => {
@@ -173,6 +184,9 @@ function ContextProvider(props) {
     setuserchange,
     annoncedeleted,
     setannoncedeleted,
+    annoncevoiture,
+    annonceimmobilier,
+    annonceother,
   };
   let func = {
     getapi,
@@ -184,6 +198,7 @@ function ContextProvider(props) {
     getuserinfo,
     getTheAnnonce,
     deleteAnnonce,
+    filtringAnnonce,
   };
   let NormalFunc = {};
 

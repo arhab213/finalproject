@@ -15,7 +15,7 @@ function Navbar(props) {
     setuserchange,
   } = Contexts();
   let [Balise, setBalise] = useState(false);
-  let Navigate = useNavigate(null);
+  let Navigate = useNavigate();
 
   function signout() {
     localStorage.removeItem("token");
@@ -24,6 +24,10 @@ function Navbar(props) {
 
   return (
     <>
+      <a href="#" id="ToTheTop">
+        UP
+      </a>
+
       {Balise ? (
         <>
           <div id="singoutbox">
@@ -56,6 +60,27 @@ function Navbar(props) {
         <div id="Navelem">
           <div id="Logo" className="elemNavbarTa3Tarf">
             AnnonceEase.
+          </div>
+          <div id="searchSection">
+            <input
+              type="text"
+              id="searchbar"
+              placeholder="      ex : voiture,ordinateur,......"
+            />
+            <button id="SearchButton">Search</button>
+            <button
+              id="AddAnnonceButton"
+              onClick={() => {
+                {
+                  window.localStorage.token
+                    ? Navigate("/addannonce")
+                    : Navigate("/Login");
+                }
+              }}
+            >
+              {" "}
+              + Add Annonce
+            </button>
           </div>
           <div id="secondElm">
             <div className="elemNavbarTa3Tarf ziada">More</div>

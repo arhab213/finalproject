@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
 #navbar{
-    background: #982176;
+    background:whitesmoke;
     padding:20px;
-   
     position: fixed;
     display: flex;
     top: 0;
@@ -10,11 +10,73 @@
     width:100%;
     gap:60%;
     z-index: 3;
-
+    box-shadow: 3px 3px 19px -1px rgba(0,0,0,0.42);
+    -webkit-box-shadow: 3px 3px 19px -1px rgba(0,0,0,0.42);
+    -moz-box-shadow: 3px 3px 19px -1px rgba(0,0,0,0.42);
 }
+#searchSection{
+    display: flex;
+    gap:2%;
+    align-items: center;
+    margin-left: -45%;
+    margin-right: -40%;
+   
+}
+#SearchButton{
+    height: 30px;
+    width: 150px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    color: white;
+    background: #6900FF;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+#SearchButton:hover{
+   
+    background: #6a00fed8;
+}
+#searchbar{
+   width: 300px;
+   height: 30px;
+   border-radius: 3px;
+   border: none;
+   font-family: 'Ubuntu', sans-serif;
+   padding-left: 20px;
+}
+#searchbar::placeholder{
+    opacity: 0.4;
+     margin-left: 20px;
+}
+#AddAnnonceButton{
+    width: 150px;
+    height:30px;
+    color: #6900FF;
+    border:1px solid #6900FF;
+    border-radius: 3px;
+    background: white;
+    cursor: pointer;
+    font-family: 'Ubuntu', sans-serif;
+}
+
 body{
     padding: 0;
     margin: 0;
+}
+.elemNavbarTa3Tarf {
+    color: rgb(31, 31, 31);
+   
+
+}
+.elemNavbarTa3Tarf:hover {
+    color: #6900FF;
+    cursor: pointer;
+
+}
+#sidebarspace{
+    border-left: 0.1px solid rgba(143, 142, 142, 0.319);
+    
 }
 #trait{
    height:0.5px;
@@ -24,13 +86,11 @@ body{
     display: flex;
    gap:50%;
     color: white;
-    margin-left:250%;
+    margin-left:50%;
 }
 #Navelem{
    display: flex;
    align-items: center;
-   
-
 }
 .navElem:hover{
 cursor: pointer;
@@ -38,7 +98,7 @@ cursor: pointer;
 #Logo{
     margin-right:60%;
     font-family: 'Rubik', sans-serif;
-    color: white;
+    color: rgb(31, 31, 31);
     font-size: 1.5rem;
 }
 
@@ -64,22 +124,26 @@ cursor: pointer;
     align-self:flex-start;
     text-align: center;
     margin-left: 10%;
+    color: #232323;
+    
 
 }
 
 #sidebarspace>.SideBarElement:hover{
-    background-color: rgb(224, 224, 224);
+    background-color: rgb(249, 249, 249);
     cursor: pointer;
     transition: 0.1s;
     padding: 10px;
     border-radius:3px;
-    transform: scale(1.1);
+    
+    
    
 
 }
 
 .SideBarElement{
     color:  rgb(67, 65, 65);
+    font-family: 'Ubuntu', sans-serif;
 }
 
 #Regiter{
@@ -102,7 +166,7 @@ cursor: pointer;
     width:25%;
     height:100vh;
     z-index: 2;
-    background:whitesmoke;
+    background:white;
     position: fixed;
     right:0;
     transition: 0.5s ease-out;
@@ -122,6 +186,8 @@ cursor: pointer;
 }
 #Profile-data{
     position: relative;
+  font-family: 'Ubuntu', sans-serif;
+  color: rgb(50, 50, 50);
 }
 #trait{
     height: 0.2px;
@@ -129,6 +195,24 @@ cursor: pointer;
     background: black;
    
     
+}
+#ToTheTop{
+    position: fixed;
+    background: #6900FF;
+    bottom: 50px;
+    left: 50px;
+    padding: 20px;
+    text-decoration: none;
+    color: white;
+    border-radius: 50%;
+    transition: 0.2s;
+    box-shadow: 0px 3px 17px -3px rgba(0,0,0,0.75);
+-webkit-box-shadow: 0px 3px 17px -3px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 3px 17px -3px rgba(0,0,0,0.75);
+
+}
+#ToTheTop:hover{
+    background: #6a00fed8;
 }
 #innerProfile{
     display: grid;

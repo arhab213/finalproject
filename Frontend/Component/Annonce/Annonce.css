@@ -2,18 +2,25 @@
  
 #annonceParent{
     font-family: 'Rubik', sans-serif;
-     width:80%;
-    background: #F5F7F8;
-   padding-bottom: 30px;
+     width:70%;
+    background: white;
+  border-radius: 20px;
+   border :0.5px solid grey;
+ 
 }
 
 #titleAnnonce{
-    color: rgb(117, 117, 117);
+    color:black;
+   font-size: 1.2rem;
+    margin-top: -30px;
+    margin-bottom: 30px;
+   
 }
 #lesIcons{
     display: flex;
-    gap: 3%;
-    margin-top:20px;
+    gap: 2%;
+    margin-left:-40px;
+  
    
     
 }
@@ -22,31 +29,35 @@
 }
 #ImageAndInfo{
     display: grid;
+    grid-gap: -5%;
     grid-template-columns: 50% 50%;
+    margin-bottom: -50px;
+    margin-top: -10px;
 
 }
 #titleandimage{
-    margin: 0 auto;
+    margin: 50px auto;
 }
 #informations{
-    margin-top: 70px;
+margin-top: 100px;
     text-align: left;
     font-family: 'Roboto', sans-serif;
     color:#525252;
+    
 }
 #informations>span{
     text-decoration: underline;
 }
 #Price{
-    font-size: 1.7rem;
+    font-size: 1rem;
     color:#2f2f2f;
 }
 #descButton{
 border: none;
  cursor: pointer;
 background: white;
- border:0.5px solid #7d1561;
- color:#ab1382;
+ border:0.5px solid #6900FF;
+ color: #6900FF;
 border-radius: 5px;
  padding: 7px 11px;
  margin-bottom:15px;
@@ -60,25 +71,26 @@ border-radius: 5px;
 #contactButton{
     width:120px;
     padding: 7px 11px;
-    background:#ab1382;
+    background: #6900FF;
     border-radius: 5px;
     margin-bottom:15px;
     cursor: pointer;
     color: white;border:none;
 }
 #contactButton:hover{
-    background:#d618a3;
+    background:#6a00ffa2;
 }
 
 #buttonOfAnnoncement{
+   
     display: flex;
     gap:4%;
-    margin-right: 100px;
+   
     
 }
 .star{
-    margin-right: 60%;
-    margin-left: 5%;
+    
+    margin-left: 65%;
     margin-top: 5px;
 }
 #description{
