@@ -5,6 +5,8 @@ import { Alert, Button, Checkbox } from "@mui/material";
 import { Contexts } from "../../src/context/context";
 import axios from "axios";
 import { Navigate } from "react-router-dom";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 
 function Annonce(props) {
   let { element, index } = props;
@@ -39,86 +41,92 @@ function Annonce(props) {
   return (
     <>
       <div id="annonceParent">
-        <div id="ImageAndInfo">
-          <div id="titleandimage">
+        <div className="ItemWrapper">
+          <div className="AnnonceTop">
+            <span className="AnnonceTitle " style={{ fontSize: "25px" }}>
+              {title}
+            </span>
+          </div>
+          <div className="AnnonceCenter">
             <img
-              src={picture ? picture : "/image2.jpeg"}
+              className="AnnonceImage"
+              src={picture ? picture : "/ImageNotFound.png"}
               alt=""
-              style={{ height: "270px", width: "270px", borderRadius: "10px" }}
             />
-          </div>
-          <div id="informations">
-            <h1 id="titleAnnonce">{title}</h1>
-            <p id="type">
-              <i class="fa-solid fa-dice"></i>&nbsp;&nbsp;&nbsp;
-              <span>Type :</span> {categorie}
-            </p>
-            <p id="etat">
-              <i class="fa-solid fa-gears"></i>&nbsp;&nbsp;&nbsp;
-              <span>état du produit :</span> {state}
-            </p>
-            <h4>
-              <i class="fa-solid fa-phone"></i> &nbsp;&nbsp;&nbsp;
-              <span>Tel : +213</span>
-              {phone}
-            </h4>
-            <p id="localisation">
-              <i
-                class="fa-solid fa-location-dot"
-                style={{ color: "#0000000" }}
-              ></i>
-              &nbsp;&nbsp;&nbsp; Localisation : {Street},{city},
-              {Street && city ? "not defined" : null}
-            </p>
-            <h4 id="Price">
-              <span>Prix : </span> {price} DA
-            </h4>
-          </div>
-        </div>
+            <div className="AnnonceInformations ">
+              <span className="AnnonceInformation CategorieSpan">
+                <span className="LeMotAvantCategorie">Categorie : </span>
+                {categorie}
+              </span>
+              <span className="AnnonceInformation StateSpan">
+                <span className="LeMotAvantCategorie">State : </span>
+                {state}
+              </span>
+              <span className="AnnonceInformation PriceSpan">
+                <span className="LeMotAvantCategorie Prix">Price : </span>
+                {price + " Da"}
+              </span>
+              <span className="AnnonceInformation LoclisationSpan">
+                <span className="LeMotAvantCategorie ">Localisation : </span>
+                {Street + " " + Region + " " + city + " "}
+              </span>
+              <span className="AnnonceInformation PhoneSpan">
+                <span className="LeMotAvantCategorie">Phone : </span>
+                {"+213" + phone}
+              </span>
+            </div>
+            <div className="AnnonceDescriptionArrow">
+              {desc ? (
+                <>
+                  <KeyboardArrowUpIcon onClick={() => setdesc(!desc)} />
+                </>
+              ) : (
+                <>
+                  <KeyboardArrowDownIcon onClick={() => setdesc(!desc)} />
+                </>
+              )}
+            </div>
 
-        <div id="lesIcons">
-          {checkFavorite ? (
-            <i
-              class="fa-solid fa-star star"
-              style={{ color: "#F4CE14", cursor: "pointer" }}
-              id="IconsNotClicked"
-              onClick={() => {
-                removeFavorite(idAnnonce);
-                removeFromFavoriteArray(FavoriteAnnonce, index);
-                setCheckFavorite(!checkFavorite);
-              }}
-            ></i>
-          ) : (
-            <i
-              class="fa-solid fa-star star"
-              style={{ cursor: "pointer" }}
-              id="IconsClicked"
-              onClick={() => {
-                PutFavorite(idAnnonce);
-                setCheckFavorite(!checkFavorite);
-                getFavorite();
-              }}
-            ></i>
-          )}
-          <div id="buttonOfAnnoncement">
             {desc ? (
-              <button id="descButton" onClick={() => setdesc(!desc)}>
-                hide Description
-              </button>
-            ) : (
-              <button id="descButton" onClick={() => setdesc(!desc)}>
-                See Description
-              </button>
-            )}
-            <button id="contactButton">Contact</button>
+              <div id="Parentdescription">
+                <p id="descriptioContenu">{description}</p>
+              </div>
+            ) : null}
           </div>
         </div>
-        {desc ? (
-          <div id="Parentdescription">
-            <span id="description">Description:</span>
-            <p id="descriptioContenu">{description}</p>
+        <div className="AnnonceBottom">
+          <div id="lesIcons">
+            <div className="StarIcon">
+              {checkFavorite ? (
+                <i
+                  class="fa-solid fa-star star"
+                  style={{ color: "#F4CE14", cursor: "pointer" }}
+                  id="IconsNotClicked"
+                  onClick={() => {
+                    removeFavorite(idAnnonce);
+                    removeFromFavoriteArray(FavoriteAnnonce, index);
+                    setCheckFavorite(!checkFavorite);
+                  }}
+                ></i>
+              ) : (
+                <i
+                  class="fa-solid fa-star star"
+                  style={{ cursor: "pointer" }}
+                  id="IconsClicked"
+                  onClick={() => {
+                    PutFavorite(idAnnonce);
+                    setCheckFavorite(!checkFavorite);
+                    getFavorite();
+                  }}
+                ></i>
+              )}
+            </div>
+
+            <div className="LeftPartOfIcons">
+              <button id="contactButton">Contact</button>
+            </div>
           </div>
-        ) : null}
+        </div>
       </div>
     </>
   );

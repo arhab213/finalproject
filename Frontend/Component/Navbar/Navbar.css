@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 #navbar{
     background:whitesmoke;
     padding:20px;
@@ -14,6 +15,17 @@
     -webkit-box-shadow: 3px 3px 19px -1px rgba(0,0,0,0.42);
     -moz-box-shadow: 3px 3px 19px -1px rgba(0,0,0,0.42);
 }
+
+.NavbarSearch{
+    display: flex;
+    align-items: center;
+    background:white ;
+    width:80%;
+    border-radius: 20px;
+}
+.SearchIcon{
+    margin-left:12px;
+}
 #searchSection{
     display: flex;
     gap:2%;
@@ -26,7 +38,7 @@
     height: 30px;
     width: 150px;
     border: none;
-    border-radius: 3px;
+    border-radius: 20px;
     cursor: pointer;
     color: white;
     background: #6900FF;
@@ -40,10 +52,15 @@
 #searchbar{
    width: 300px;
    height: 30px;
-   border-radius: 3px;
+   border-radius: 20px;
    border: none;
    font-family: 'Ubuntu', sans-serif;
    padding-left: 20px;
+
+}
+#searchbar:focus{
+    outline: none;
+
 }
 #searchbar::placeholder{
     opacity: 0.4;
@@ -54,7 +71,7 @@
     height:30px;
     color: #6900FF;
     border:1px solid #6900FF;
-    border-radius: 3px;
+    border-radius: 20px;
     background: white;
     cursor: pointer;
     font-family: 'Ubuntu', sans-serif;
@@ -96,8 +113,8 @@ body{
 cursor: pointer;
 }
 #Logo{
-    margin-right:60%;
-    font-family: 'Rubik', sans-serif;
+    margin-right:55%;
+    font-family: poppins, sans-serif;
     color: rgb(31, 31, 31);
     font-size: 1.5rem;
 }
@@ -200,12 +217,13 @@ cursor: pointer;
     position: fixed;
     background: #6900FF;
     bottom: 50px;
-    left: 50px;
+    left: 30px;
     padding: 20px;
     text-decoration: none;
     color: white;
     border-radius: 50%;
     transition: 0.2s;
+    z-index: 3;
     box-shadow: 0px 3px 17px -3px rgba(0,0,0,0.75);
 -webkit-box-shadow: 0px 3px 17px -3px rgba(0,0,0,0.75);
 -moz-box-shadow: 0px 3px 17px -3px rgba(0,0,0,0.75);
@@ -312,6 +330,20 @@ cursor: pointer;
         color: white;
         margin-left:330%;
     }
+
+  }
+@media screen and (max-width:370px) {
+   
+    #AddAnnonceButton,#SearchButton,.NavbarSearch{
+        display: none;
+    }
+    #Logo{
+        margin-right:35%;
+        font-family: poppins, sans-serif;
+        color: rgb(31, 31, 31);
+        font-size: 1.5rem;
+    }
+
 
   }
 

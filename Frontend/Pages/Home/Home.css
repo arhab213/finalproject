@@ -1,16 +1,21 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 #HomePageContainer{
-  margin: 100px  -5% 0 5%;
-  display: block;
- 
-}
-.Items{
-margin-top: 3% ;
-margin-left: 10%;
-margin-right:-10%;
-display: block;
+  margin-left:20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 5%;
 
 }
+#HomePageContainerTwo{
+    padding-top: 50px;
+    margin-left:20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 5%;
+}
+
 #CategorieAnnonce{
     display: flex;
     flex-wrap: wrap;
@@ -21,8 +26,8 @@ display: block;
 #HomeTitle{
     font-size: 1.6rem;
     font-family: 'Poppins', sans-serif;
-    color: rgb(78, 78, 78);
-    margin: 10% auto -3% auto;
+    color:#6900FF;
+    margin: 7% auto -3% auto;
    
     
 }
@@ -36,6 +41,13 @@ display: block;
     position: fixed;
     left:35%;
     top:13%;
+   z-index: 5;
+}
+.SearchNotFoundPrevention{
+    margin-top: 250px;
+    margin-left: 450px;
+    opacity: 0.3;
+    
 }
 @media only screen and (max-width:500px) {
  
@@ -48,6 +60,19 @@ display: block;
         }
     #HomeTitle{
         margin-top: 50px;}
+  }
+
+  @media screen and (max-width:370px) {
+   
+    .LesCategories{
+        margin-left:3px;
+        margin-bottom: 20px;
+    }
+    .Items{
+      margin-left:-50px;
+    }
+
+
   }
 
   

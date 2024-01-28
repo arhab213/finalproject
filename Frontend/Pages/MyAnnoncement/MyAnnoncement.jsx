@@ -33,16 +33,16 @@ function MyAnnoncement(props) {
           Element deleted from the site
         </Alert>
       ) : null}
-      <h2 id="title">
-        <i class="fa-solid fa-bullhorn"></i>&nbsp;&nbsp;My Annoncements....
-      </h2>
+      <h2 className="TitleMyAnnoncement">My Annoncement</h2>
       <div id="traitMyAnnoncement"></div>
 
       {myannoncement.length > 0 ? (
         <>
-          {myannoncement.map((e, i) => {
-            return <AnnonceMyAnnoncement element={e} index={i} />;
-          })}
+          <div className="AnnonceContainerInMyAnnonce">
+            {myannoncement.map((e, i) => {
+              return <AnnonceMyAnnoncement element={e} index={i} />;
+            })}
+          </div>
         </>
       ) : (
         <div id="thelegend">you didn't post annoncement yet</div>

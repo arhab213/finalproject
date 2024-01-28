@@ -1,6 +1,7 @@
 import userModel from "../Models/users.js";
 import AnnonceModel from "../Models/Annonce.js";
 import jwt from "jsonwebtoken";
+import bcrypt from "bcrypt";
 export const getAll = async (req, res) => {
   const GetAllUsers = await userModel.find();
   return res.json({ object: GetAllUsers });
@@ -48,7 +49,11 @@ export const Login = async (req, res) => {
     if (!LoginUser) {
       return res.json({ message: "UserPrblm" });
     }
-    if (LoginUser.password != password) {
+    const IsPasswordCorrect = await bcrypt.compare(
+      password,
+      LoginUser.password
+    );
+    if (!IsPasswordCorrect) {
       return res.json({ message: "passwordPrbl" });
     }
     let { _id: id } = LoginUser;

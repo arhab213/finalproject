@@ -33,22 +33,21 @@ function Favorite(props) {
           Element deleted from favorite
         </Alert>
       ) : null}
-      <div id="FavoriteTitle">
-        <i class="fa-regular fa-star"></i>&nbsp;&nbsp;Your favorite list ...
-      </div>
+      <div id="FavoriteTitle">&nbsp;&nbsp;Your favorite list ...</div>
       <div id="traitdufavorite"></div>
-      {IsFavoriteEmpty ? (
-        <div id="EmptyFavorite"> you don't have any favorite advertisement</div>
-      ) : null}
+
       <div id="AnnonceContainer">
         {" "}
-        {FavoriteAnnonce
-          ? FavoriteAnnonce.map((e, i) => {
-              return <AnnonceInFavorite element={e} index={i} />;
-            })
-          : null}
+        {FavoriteAnnonce.length > 0 ? (
+          FavoriteAnnonce.map((e, i) => {
+            return <AnnonceInFavorite element={e} index={i} />;
+          })
+        ) : (
+          <div id="EmptyFavorite"> you don't have any favorite annoncement</div>
+        )}
       </div>
     </>
   );
 }
 export default Favorite;
+// <div id="EmptyFavorite"> you don't have any favorite annoncement</div>

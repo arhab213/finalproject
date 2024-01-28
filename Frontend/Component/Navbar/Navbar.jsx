@@ -1,10 +1,11 @@
 import "./Navbar.css";
 import { useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { Button } from "@mui/material";
 import { Contexts } from "../../src/context/context";
 
 function Navbar(props) {
+  let Reference = useRef();
   let {
     userinfo,
     setuserinfo,
@@ -13,8 +14,14 @@ function Navbar(props) {
     setmenue,
     userchange,
     setuserchange,
+    TokenUndifined,
+    SearchContainer,
+    SetSearchContainer,
+    setSearchIndicator,
+    GetAnnonceArrayFiltred,
   } = Contexts();
   let [Balise, setBalise] = useState(false);
+
   let Navigate = useNavigate();
 
   function signout() {
@@ -24,10 +31,6 @@ function Navbar(props) {
 
   return (
     <>
-      <a href="#" id="ToTheTop">
-        UP
-      </a>
-
       {Balise ? (
         <>
           <div id="singoutbox">
@@ -62,12 +65,28 @@ function Navbar(props) {
             AnnonceEase.
           </div>
           <div id="searchSection">
-            <input
-              type="text"
-              id="searchbar"
-              placeholder="      ex : voiture,ordinateur,......"
-            />
-            <button id="SearchButton">Search</button>
+            <div className="NavbarSearch">
+              <i class="fa-solid fa-magnifying-glass SearchIcon"></i>
+              <input
+                type="text"
+                id="searchbar"
+                placeholder="ex : voiture,ordinateur,......"
+                ref={Reference}
+                onChange={() => {
+                  SetSearchContainer(Reference.current.value);
+                }}
+              />
+            </div>
+
+            <button
+              id="SearchButton"
+              onClick={() => {
+                setSearchIndicator(true);
+                GetAnnonceArrayFiltred();
+              }}
+            >
+              Search
+            </button>
             <button
               id="AddAnnonceButton"
               onClick={() => {
@@ -110,7 +129,7 @@ function Navbar(props) {
               <div id="Profile-data" style={{ hover: "none" }}>
                 <div id="innerProfile">
                   <img
-                    src={userchange ? userinfo.image : "./Profile.png"}
+                    src={userchange ? userinfo.image : "/Profile.png"}
                     style={{
                       height: "50px",
                       width: "50px",
@@ -175,7 +194,13 @@ function Navbar(props) {
               </div>
             </>
 
-            <div className="SideBarElement" onClick={() => Navigate("/")}>
+            <div
+              className="SideBarElement"
+              onClick={() => {
+                Navigate("/");
+                setSearchIndicator(false);
+              }}
+            >
               <i class="fa-solid fa-house"></i>
               &nbsp; &nbsp; &nbsp; Home &nbsp; &nbsp; &nbsp;
             </div>
@@ -195,8 +220,8 @@ function Navbar(props) {
               <div
                 className="SideBarElement"
                 onClick={() => {
-                  Navigate("/Favorite");
                   setmenue(!menue);
+                  Navigate("/Favorite");
                 }}
               >
                 <i class="fa-regular fa-star"></i>

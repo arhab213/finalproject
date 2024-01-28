@@ -1,9 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
 
-#title{
+.TitleMyAnnoncement{
     font-size: 1.6rem;
-    font-family: 'Poppins', sans-serif;
     color: rgb(62, 62, 62);
+    font-family: 'Open Sans', sans-serif;
+ 
+}
+.AnnonceContainerInMyAnnonce{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5%;
 }
 #traitMyAnnoncement{
   height: 1px;

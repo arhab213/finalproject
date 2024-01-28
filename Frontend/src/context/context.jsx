@@ -22,7 +22,10 @@ function ContextProvider(props) {
   let [annoncevoiture, setannoncevoiture] = useState([]);
   let [annonceimmobilier, setannonceimmobilier] = useState([]);
   let [annonceother, setannonceother] = useState([]);
-
+  let [TokenUndifined, setTokenUndifined] = useState(false);
+  let [SearchContainer, SetSearchContainer] = useState([]);
+  let [searchIndicator, setSearchIndicator] = useState(false);
+  let [ArrayFiltred, setArrayFiltred] = useState();
   const getapi = async () => {
     try {
       const res = await axios.get("http://localhost:3000/Annonce/");
@@ -41,7 +44,7 @@ function ContextProvider(props) {
   const filtringAnnonce = () => {
     const filterVoiture = annonce.filter((e) => e.categorie == "voiture");
     setannoncevoiture(filterVoiture);
-    const filterImmobilier = annonce.filter((e) => e.categorie == "imobillier");
+    const filterImmobilier = annonce.filter((e) => e.categorie == "immobilier");
     setannonceimmobilier(filterImmobilier);
     const filterOther = annonce.filter((e) => e.categorie == "other");
     return setannonceother(filterOther);
@@ -72,7 +75,7 @@ function ContextProvider(props) {
     );
     let { message } = res.data;
     if (message != "positive") {
-      return alert("api problem");
+      return TokenNeedAlert();
     }
     getapi();
     return addedFavoriteAlert();
@@ -95,11 +98,14 @@ function ContextProvider(props) {
     const token = window.localStorage.token;
     const tmp = [];
     try {
+      if (!window.localStorage.token) {
+        return TokenNeedAlert();
+      }
       const res = await axios.get("http://localhost:3000/User/Favorite", {
         headers: { token: token },
       });
       if (!res) {
-        return alert("API probleme");
+        return alert("A probleme happened with the data");
       }
       if (res.data.message == "empty") {
         return setFavoriteIsEmpty(true);
@@ -134,6 +140,12 @@ function ContextProvider(props) {
     return DeleteAlert();
   };
 
+  const TokenNeedAlert = () => {
+    setTokenUndifined(true);
+    setTimeout(() => {
+      setTokenUndifined(false);
+    }, 2000);
+  };
   const addedFavoriteAlert = () => {
     setIsFavorite(true);
     setTimeout(() => {
@@ -162,6 +174,12 @@ function ContextProvider(props) {
     }
     return setannonceToEdit(res.data.data);
   };
+  const GetAnnonceArrayFiltred = () => {
+    const ArrayFiltred = annonce.filter((e) =>
+      e.title.toLowerCase().includes(SearchContainer.toLowerCase())
+    );
+    return setArrayFiltred(ArrayFiltred);
+  };
 
   let state = {
     annonce,
@@ -187,6 +205,13 @@ function ContextProvider(props) {
     annoncevoiture,
     annonceimmobilier,
     annonceother,
+    TokenUndifined,
+    SearchContainer,
+    SetSearchContainer,
+    searchIndicator,
+    setSearchIndicator,
+    ArrayFiltred,
+    setArrayFiltred,
   };
   let func = {
     getapi,
@@ -199,6 +224,7 @@ function ContextProvider(props) {
     getTheAnnonce,
     deleteAnnonce,
     filtringAnnonce,
+    GetAnnonceArrayFiltred,
   };
   let NormalFunc = {};
 

@@ -16,51 +16,93 @@
    
 
 }
-#annoncemineParent{
-    font-family: 'Rubik', sans-serif;
-     width:80%;
-    background:#F5F7F8;
-   padding-bottom: 30px;
-   margin:30px 0 30px 10%;
+#annonceParentMyAnnonce{
+  font-family: 'Rubik', sans-serif;
+  min-width:300px;
+  max-width: 300px;
+  max-height:600px ;
+  min-height:600px ;
+  background:  white;
+border-radius: 20px;
+box-shadow: 0px 0px 17px 5px rgba(0,0,0,0.1);
+padding: 15px;
+margin: 20px 10px;
+position: relative;
+z-index: 0;
 }
-#descmineButton{
-border: none;
- cursor: pointer;
+.AnnonceTitle{
+font-size: 30px;
+font-weight: 500;
 
- border:0.5px solid #7d1561;
- color:#ab1382;
 
-border-radius: 5px;
- padding: 7px 30px;
- margin:0 0 15px 130%;
-  width:190px;
+}
+
+.AnnonceImage{
+border-radius: 30px;
+object-fit: contain;
+max-height: 270px;
+max-width: 270px;
+margin:15px
+}
+.AnnonceInformations{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  
+}
+.AnnonceInformation{
+  text-transform: capitalize;
+   margin-bottom:10px;
+}
+.AnnonceDescriptionArrow{
+  cursor: pointer;
+}
+#description{
+  font-weight: bold;
+  font-size: 20px;
+}
+#lesIcons{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.ItemWrapper{
+min-height:540px;
+max-height :540px;
+overflow-y: scroll;
  
 }
-#descFavButton{
-border: none;
- cursor: pointer;
-
- border:0.5px solid #7d1561;
- color:#ab1382;
-border-radius: 5px;
- padding: 5px 30px;
- margin-bottom:15px;
-  width:130px;
+ 
+.LeftPartOfIcons{
+  display: flex;
+  gap: 5%;
+  align-items: center;
+  margin-top:20px;
+  bottom: 20px;
 
 }
-#buttonmineDelete{
-    border: none;
-     cursor: pointer;
-    
-     border:0.5px solid red;
-     color:red;
-    
-    border-radius: 5px;
-     padding: 7px 30px;
-     margin: 0 30% 15px 0;
-      width:130px;
-    
-    }
 
+
+ 
+.ButtonOfAnnonceInMyAnnonce{
+  cursor: pointer;
+  padding: 10px;
+  width: 100px;
+  border:1px solid #6900FF;
+  color: #6900FF;
+  border-radius: 20px;
+  background-color:white;}
+.Delete{
+  background-color: #FF004D;
+  border: none;
+  color: white;
+  position: absolute;
+  bottom: 20px;
+  right: 30px;
+}
+.Edite{
+  position: absolute;
+  bottom: 20px;
+}
 
    

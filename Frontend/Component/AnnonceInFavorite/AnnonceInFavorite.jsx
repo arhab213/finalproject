@@ -3,7 +3,9 @@ import "./AnnonceInFavorite.css";
 import { useState } from "react";
 import { Button } from "@mui/material";
 import { Contexts } from "../../src/context/context";
-import axios from "axios";
+
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 
 function AnnonceInFavorite(props) {
   let { element, index } = props;
@@ -36,43 +38,52 @@ function AnnonceInFavorite(props) {
 
   return (
     <>
-      <div id="favParent">
-        <div id="ImageAndInfo">
-          <div id="titleandimage">
-            <h1 id="titleAnnonce">{title}</h1>
-            <img
-              src={picture ? picture : "/image2.jpeg"}
-              alt=""
-              style={{ height: "200px", width: "300px" }}
-            />
+      <div id="annonceParent">
+        <div className="ItemWrapper">
+          <div className="AnnonceTop">
+            <span className="AnnonceTitle ">{title}</span>
           </div>
-          <div id="informations">
-            <p id="type">
-              <i class="fa-solid fa-dice"></i>&nbsp;&nbsp;&nbsp;
-              <span>Type :</span> {categorie}
-            </p>
-            <p id="">
-              <i class="fa-solid fa-gears"></i>&nbsp;&nbsp;&nbsp;
-              <span>état du produit :</span> {state}
-            </p>
-            <h4>
-              <i class="fa-solid fa-phone"></i> &nbsp;&nbsp;&nbsp;
-              <span>Tel : +213</span>
-              {phone}
-            </h4>
-            <p id="localisation">
-              <i
-                class="fa-solid fa-location-dot"
-                style={{ color: "#0000000" }}
-              ></i>
-              &nbsp;&nbsp;&nbsp; Localisation :{" "}
-              {Street ? Street : "(no street added)"},
-              {city ? city : "(no city added)"}
-            </p>
-            <h4 id="Price">
-              <i class="fa-solid fa-money-bill"></i>&nbsp;&nbsp;&nbsp;
-              <span>Prix : </span> {price} DA
-            </h4>
+          <div className="AnnonceCenter">
+            <img
+              className="AnnonceImage"
+              src={picture ? picture : "/ImageNotFound.png"}
+              alt=""
+            />
+            <div className="AnnonceInformations ">
+              <span className="AnnonceInformation CategorieSpan">
+                {"categorie : " + categorie}
+              </span>
+              <span className="AnnonceInformation StateSpan">
+                {"State : " + state}
+              </span>
+              <span className="AnnonceInformation PriceSpan">
+                {"Price : " + price + " Da"}
+              </span>
+              <span className="AnnonceInformation LoclisationSpan">
+                {Street + " " + Region + " " + city + " "}
+              </span>
+              <span className="AnnonceInformation PhoneSpan">
+                {"+213" + phone}
+              </span>
+              <span className="AnnonceInformation"></span>
+            </div>
+            <div className="AnnonceDescriptionArrow">
+              {desc ? (
+                <>
+                  <KeyboardArrowUpIcon onClick={() => setdesc(!desc)} />
+                </>
+              ) : (
+                <>
+                  <KeyboardArrowDownIcon onClick={() => setdesc(!desc)} />
+                </>
+              )}
+            </div>
+
+            {desc ? (
+              <div id="Parentdescription">
+                <p id="descriptioContenu">{description}</p>
+              </div>
+            ) : null}
           </div>
         </div>
 
@@ -84,27 +95,12 @@ function AnnonceInFavorite(props) {
               removeFromFavoriteArray(FavoriteAnnonce, index);
             }}
           >
-            Delete from Favorite
+            Delete
           </button>
           <div id="buttonOfAnnoncement">
-            {desc ? (
-              <button id="descButton" onClick={() => setdesc(!desc)}>
-                hide Description
-              </button>
-            ) : (
-              <button id="descButton" onClick={() => setdesc(!desc)}>
-                See Description
-              </button>
-            )}
             <button id="contactButton">Contact</button>
           </div>
         </div>
-        {desc ? (
-          <div id="Parentdescription">
-            <span id="description">Description:</span>
-            <p id="descriptioContenu">{description}</p>
-          </div>
-        ) : null}
       </div>
     </>
   );

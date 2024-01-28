@@ -1,6 +1,11 @@
 #Container>*{
-   margin: 90px;
-
+ margin: 20px;
+}
+#Container{
+   margin-top: 90px;
+   margin-left: 50px;
+   display: flex;
+   flex-wrap: wrap;
 }
 #TitleBig{
    font-family: 'Poppins', sans-serif;
